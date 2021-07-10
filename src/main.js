@@ -111,8 +111,8 @@ function findClosingBracketIndex(str, pos) {
     return -1;
 }
 
-//const programText = '(+ 1 2 (+ 2 5 (- 8 2 (+ 1 9))) (+ 3 4))'
-const programText = '(+ 1 2 (+ 3 4) (+ 5 6))'
+const programText = '(+ 1 2 (+ 2 5 (- 8 2 (+ 1 9))) (+ 3 4))'
+//const programText = '(+ 1 2 (+ 3 4) (+ 5 6))'
 const searchStr = '[(]'
 const openBracketIndices = [...programText.matchAll(new RegExp(searchStr, 'gi'))].map(a => a.index);
 //console.log(openBracketIndices)
@@ -137,8 +137,8 @@ const expressionsMap = openBracketIndices.map(openBracketIndex => {
 
 console.log(expressionsMap)
 
-let tree = createTree(expressionsMap, "range", "expression" )
-console.log(tree)
+export let syntaxTree = createTree(expressionsMap, "range", "expression" )
+console.log(syntaxTree)
 
 //const testString = '+ 2 5 (- 8 2)'
 //const noStartEndBrackets = testString.slice(1, testString.length - 1)
